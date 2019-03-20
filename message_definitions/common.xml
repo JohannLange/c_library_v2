@@ -5112,6 +5112,13 @@
       <field type="uint16_t" default="0" name="cell_offset">The cell number of the first index in the 'voltages' array field. Using this field allows you to specify cell voltages for batteries with more than 16 cells.</field>
       <field type="uint16_t[16]" name="voltages" units="mV">Individual cell voltages. Batteries with more 16 cells can use the cell_offset field to specify the cell offset for the array specified in the current message . Index values above the valid cell count for this battery should have the UINT16_MAX value.</field>
     </message>
+    <message id="339" name="MOMENT_CONTROL">
+      <description>Send the desired moments from the offboard controller to the px4 system.</description>
+      <field type="float" name="roll">Roll Moment; -1..1</field>
+      <field type="float" name="pitch">Pitch Moment; -1..1</field>
+      <field type="float" name="yaw">Yaw Moment; -1..1</field>
+      <field type="float" name="thrust">Thrust; 0..1</field>
+    </message>
     <!-- Rover specific messages -->
     <message id="9000" name="WHEEL_DISTANCE">
       <description>Cumulative distance traveled for each reported wheel.</description>
